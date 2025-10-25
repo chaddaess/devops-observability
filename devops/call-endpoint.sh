@@ -1,0 +1,1 @@
+for i in {1..200}; do curl -s -o /dev/null http://localhost:8080/hello; sleep 0.1; done
