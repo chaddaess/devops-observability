@@ -1,9 +1,17 @@
+#!/usr/bin/env bash
+# Usage: ./scripts/set_replicas.sh <nb_replicas>
+
+
+REPLICAS="${1:-1}"
+
+
+cat > src/main/resources/myapp-deployment.yaml << EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: myapp
 spec:
- replicas: 3
+ replicas: ${REPLICAS}
  selector:
    matchLabels:
      app: myapp
@@ -20,3 +28,8 @@ spec:
          envFrom:
            - secretRef:
                name: myapp-secrets
+EOF
+
+
+echo "✔ myapp-deployment.yaml mis à jour avec replicas = ${REPLICAS}"
+
