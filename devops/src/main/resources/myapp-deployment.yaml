@@ -17,6 +17,3 @@ spec:
          image: myapp:secure
          ports:
            - containerPort: 8080
-         envFrom:
-           - secretRef:
-               name: myapp-secrets
