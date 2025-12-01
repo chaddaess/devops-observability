@@ -1,4 +1,0 @@
-config:
-  azure-native:location: WestUS2
-  pulumi:python.virtualenv: .venv
-  pulumi:python.cmd: .venv\Scripts\python.exe
